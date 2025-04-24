@@ -1,0 +1,6 @@
+# Volumes
+influxdb_data/
+grafana_data/
+
+# Environment / Credentials
+*.env
