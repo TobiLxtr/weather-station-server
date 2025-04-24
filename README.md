@@ -38,7 +38,7 @@ git clone https://github.com/TobiLxtr/weather-station-server.git ~/iot-server
 cd ~/iot-server
 ```
 
-Add a `.env` file in the same structre as the `.env.example` file to your project folder containing the initial credentials.
+Add a `.env` file in the same structure as the `.env.example` file to your project folder containing the initial credentials.
 ```
 cp .env.example .env
 ```
