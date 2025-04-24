@@ -1,0 +1,42 @@
+version: 3.9
+
+services:
+  influxdb:
+    container_name: InfluxDB
+    image: influxdb:2.7.11
+    ports:
+      - 8086:8086
+    volumes:
+      - influxdb_data:/var/lib/influxdb2
+    environment:
+      INFLUXDB_INIT_MODE: setup
+      INFLUXDB_INIT_USERNAME: ${INFLUXDB_USERNAME}
+      INFLUXDB_INIT_PASSWORD: ${INFLUXDB_PASSWORD}
+      INFLUXDB_INIT_ORG: ${INFLUXDB_ORG}
+      INFLUXDB_INIT_BUCKET: ${INFLUXDB_BUCKET}
+      INFLUXDB_INIT_ADMIN_TOKEN: ${INFLUXDB_ADMIN_TOKEN}
+    networks:
+      - monitoring
+
+  grafana:
+    container_name: Grafana
+    image: grafana/grafana-enterprise:11.6.1
+    ports:
+      - 3000:3000
+    volumes:
+      - grafana_data:/var/lib/grafana
+    depends_on:
+      - influxdb
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD}
+      GF_AUTH_ANONYMOUS_ENABLED: false
+    networks:
+      - monitoring
+
+networks:
+  monitoring:
+    driver: bridge
+
+volumes:
+  influxdb_data:
+  grafana_data:
