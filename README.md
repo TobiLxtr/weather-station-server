@@ -50,7 +50,7 @@ Edit the environment variables and save by hitting `ctrl + O` (WriteOut), `Enter
 ## Docker compose
 When everything is set up, run `docker compose`
 ```
-docker compose up -d
+sudo docker compose up -d
 ```
 
 ## Automatically start IoT server on boot
