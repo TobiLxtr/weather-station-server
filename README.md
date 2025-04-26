@@ -30,9 +30,13 @@ sudo apt install git
 ```
 
 ## Create project
-Create the project folder by cloning this repository.
+Create the project folder by cloning this repository using HTTPS
 ```
 git clone https://github.com/TobiLxtr/weather-station-server.git ~/iot-server
+```
+or SSH
+```
+git clone git@github.com:TobiLxtr/weather-station-server.git ~/iot-server
 ```
 ```
 cd ~/iot-server
