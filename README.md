@@ -56,6 +56,10 @@ When everything is set up, run `docker compose`
 ```
 sudo docker compose up -d
 ```
+To stop the containers and remove the docker network use
+```
+sudo docker compose down
+```
 
 ## Automatically start IoT server on boot
 Create a systemd service.
