@@ -38,6 +38,7 @@ or SSH
 ```
 git clone git@github.com:TobiLxtr/weather-station-server.git ~/iot-server
 ```
+Go to the folder.
 ```
 cd ~/iot-server
 ```
